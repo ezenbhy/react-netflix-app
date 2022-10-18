@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate , useLocation} from "react-router-dom";
+import { useNavigate , Link } from "react-router-dom";
 import "./Nav.css";
 
 export default function Nav() {
   const [show, setShow] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
+
   
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -30,13 +30,15 @@ export default function Nav() {
 
   return (
     <nav className={`nav ${show && "nav__black"} `}>
+      <Link to={'/'}>
       <img
         alt="Netflix logo"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/170px-Netflix_2015_logo.svg.png"
         className="nav__logo"
         //onClick={() => (window.location.href = "/")}
-        onClick={() => (history.push({pathname:"/"}))}
+        
       />
+      </Link>
 
       <input
         value={searchValue}
