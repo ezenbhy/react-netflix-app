@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation} from "react-router-dom";
 import "./Nav.css";
 
 export default function Nav() {
   const [show, setShow] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
-
+  const location = useLocation();
+  
   useEffect(() => {
     window.addEventListener("scroll", () => {
       console.log("window.scrollY", window.scrollY);
@@ -33,7 +34,8 @@ export default function Nav() {
         alt="Netflix logo"
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/170px-Netflix_2015_logo.svg.png"
         className="nav__logo"
-        onClick={() => (window.location.href = "/")}
+        //onClick={() => (window.location.href = "/")}
+        onClick={() => (navigate('/'))}
       />
 
       <input
