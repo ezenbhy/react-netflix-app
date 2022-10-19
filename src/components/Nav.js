@@ -30,15 +30,15 @@ export default function Nav() {
 
   return (
     <nav className={`nav ${show && "nav__black"} `}>
-      <Link to={'/'} className="a">
+      {/* <Link to={'/'} className="a"> */}
         <img
           alt="Netflix logo"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/170px-Netflix_2015_logo.svg.png"
           className="nav__logo"
-          //onClick={() => (window.location.href = "/")}
+          onClick={() => (window.location.href = "/")}
           //onClick={() => (navigate('/'))}
         />
-      </Link>
+      {/* </Link> */}
 
       <input
         value={searchValue}
